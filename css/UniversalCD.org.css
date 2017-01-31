@@ -1,0 +1,228 @@
+html, body{
+	margin: 0;
+	
+	min-height: 100%;
+	height: 100%;
+	
+	min-width: 100%;
+	width: 100%;
+	max-width: 100%;
+
+	background: #888;
+
+	overflow-x: hidden;
+	font-size: 100%;
+}
+
+#header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin-left: auto;
+	margin-right: auto;
+
+	display: flex;
+	letter-spacing: 0.05em;
+	vertical-align: middle;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	justify-items: space-around;
+
+	min-width: 100%;
+	width: 100%;
+	max-width: 100%;
+
+	min-height: 50px;
+	height: 10%;
+	max-height: 100px;
+
+	margin-bottom: 5px;
+
+	border-bottom: 1px solid #000000;
+
+	background: rgba(250,250,250,0.9);
+
+	box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+
+	font-size: 1.5em;
+	z-index: 5;
+
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+#headerLogo{
+	flex-grow: 7;
+	height: 75%;
+	text-align: left;
+	margin-left: 5%;
+	margin-right: -5%;
+}
+
+#headerLogo img{
+	height: 100%;
+	width: auto;
+}
+
+.headerItem{
+	flex-grow: 1;
+	text-align: center;
+	vertical-align: middle;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+.headerItem a, .headerItem a:visited, .headerItem a:active, .headerItem a:link{
+	text-decoration: none;
+	color: #222222;
+	transition: color 1s ease;
+}
+
+.headerItemHighlight{
+	margin-right: 5%;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+}
+
+.headerItemHighlight, .headerItemHighlight a, .headerItemHighlight a:visited, .headerItemHighlight a:active, .headerItemHighlight a:link{
+	background: #7F6000;
+	color: #FAFAFA;
+	transition: color 1s ease,
+				background 1s ease;
+}
+
+.headerItem a:hover{
+	color: #666666;
+}
+
+.headerItemHighlight:hover, .headerItemHighlight a:hover{
+	color: #FFFFFF;
+	background: #8F7010;
+}
+
+#contentContainer{
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.contentPage{
+	height:100vh;
+	min-height:100vh;
+	min-width: 100%;
+	width: 100%;
+	background-size: cover;
+	z-index: 1;
+	color: #FAFAFA;
+}
+
+#Home{
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../images/people-woman-coffee-meeting.jpg") no-repeat center top;
+	background-size: cover;
+}
+
+#About{
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../images/people-coffee-tea-meeting.jpg") no-repeat center top;
+	background-size: cover;
+}
+
+#Community{
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../images/pexels-photo-131372.jpeg") no-repeat center top;
+	background-size: cover;
+}
+
+#Donate{
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../images/pexels-photo-242587.jpeg") no-repeat center top;
+	background-size: cover;
+}
+
+#Contact{
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../images/pexels-photo-220197.jpeg") no-repeat center top;
+	background-size: cover;
+}
+
+.contentWrapper{
+	min-height: 100vh;
+	height: 100vh;
+	max-height: 100vh;
+	min-width: 100vw;
+	width: 100vw;
+	max-width: 100vw;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	z-index: 1;
+	text-align: center;
+}
+
+.contentHeader{
+	min-width: 100%;
+	width: 100%;
+	max-width: 100%;
+	align-self: center;
+	text-align: center;
+	vertical-align: middle;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+	font-size: 4em;
+	letter-spacing: 0.05em;
+}
+
+.contentContent{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 1.25em;
+	width: 60vw;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: justify;
+}
+
+#Contact .contentContent{
+	text-align: center;
+}
+
+.contentFooter{
+}
+
+#footer{
+	min-width: 100%;
+	width: 100%;
+	max-width: 100%;
+	background: #111;
+	color: #FAFAFA;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-items: center;
+	box-shadow: 0px -1px 2px rgba(0,0,0,0.5);
+}
+
+.left{
+	text-align: left;
+}
+
+.right{
+	text-align: right;
+}
+
+#footer .footerListing.left{
+	margin-left: 25px;
+}
+
+#footer .footerListing.right{
+	margin-right: 25px;
+}
+
+#footer #source{
+	flex-shrink: 1;
+	flex-grow: 1;
+}
+
+.footerListing{
+	flex: 2 1 0;
+}
+
