@@ -47,7 +47,7 @@ a{
 }
 
 ///Color Bar
-#headercolorbar{
+.color-bar{
 	display: flex;
 
 	min-width: 100vw;
@@ -77,7 +77,7 @@ a{
 	box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
 }
 
-.hbc{
+.color-bar-block{
 	display: block;
 	flex-grow: 1;
 	min-height: 100%;
@@ -86,8 +86,8 @@ a{
 }
 
 @each $current-color in $color-list-gold{
-	#hbc#{index($color-list-gold,$current-color)} {
-		color: $current-color;
+	.color-bar-block-#{index($color-list-gold,$current-color)} {
+		background-color: $current-color;
 	}
 }
 
@@ -134,7 +134,7 @@ a{
 	letter-spacing: 0.05em;
 }
 
-#headerLogo{
+#header-logo{
 	flex-grow: 7;
 	height: 75%;
 	text-align: left;
@@ -150,7 +150,7 @@ a{
 	}
 }
 
-.headerItem{
+.header-item{
 	flex-grow: 1;
 	text-align: center;
 	vertical-align: middle;
@@ -174,7 +174,7 @@ a{
 	}	
 }
 
-.headerItemHighlight{
+.header-item-highlight{
 	margin-right: 5%;
 
 	padding: {
@@ -182,26 +182,28 @@ a{
 		bottom: 0.25em;
 	}
 
-	box-shadow: -1px 1px 2px rgba(0,0,0,0.5);
+	box-shadow: -1px 1px 2px rgba(0,0,0,0.5),
+				inset -1px 1px 2px rgba(0,0,0,0);
 	text-shadow: -1px 1px 2px rgba(100,100,100,0.75);
 
-	.headerItem:last-child, &, & a, & a:visited, & a:active, & a:link{
+	&, &.header-item:last-child, & a, & a:visited, & a:active, & a:link{
 		background: $color-gold;
 		color: $color-white;
 		transition:	color 1s ease,
 					background 1s ease,
-					box-shadow 0.25s linear;
+					box-shadow 0.5s linear;
 	}
 
 	&:hover{
 		color: #FFFFFF;
 		background: $color-gold-light;
-		box-shadow: 1px -1px 2px rgba(0,0,0,0.5);
+		box-shadow: -1px 1px 2px rgba(0,0,0,0),
+			  inset -1px 1px 2px rgba(0,0,0,0.5);
 	}
 }
 
 ///Content
-#contentContainer{
+#content-container{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -212,7 +214,7 @@ a{
 	}
 }
 
-.contentPage{
+.content-page{
 	height:100vh;
 	min-height:100vh;
 	min-width: 100vw;
@@ -250,7 +252,7 @@ a{
 	@include content-page-background($background-image-contact);
 }
 
-.contentWrapper{
+.content-wrapper{
 	display: flex;
 	flex-direction: column;
 	align-content: center;
@@ -262,13 +264,13 @@ a{
 	padding: 10px;
 	box-shadow: 0 3px 6px 1px rgba(0,0,0,0.26), 0 3px 6px 1px rgba(0,0,0,0.33);
 	
-	.contentPage:first-of-type &{
+	.content-page:first-of-type &{
 		box-shadow: none;
 		background: none;
 	}
 }
 
-.contentHeader{
+.content-header{
 	min-width: 60vw;
 	align-self: center;
 	text-align: center;
@@ -294,7 +296,7 @@ a{
 	border-radius: 0px;
 }
 
-.contentContent{
+.content-content{
 	width: 60vw;
 	
 	margin: {
@@ -311,11 +313,11 @@ a{
 	text-align: justify;
 }
 
-.contentItem{
+.content-item{
 	margin-bottom: 1em;
 }
 
-#Contact .contentItem, .contentItem:last-child{
+#Contact .content-item, .content-item:last-child{
 	margin-bottom: 0em;
 }
 
@@ -327,7 +329,7 @@ a{
 	min-width: 100%;
 	width: 100%;
 	max-width: 100%;
-	background: rgba(10,10,10,0.8);
+	background: rgba(10,10,10,0.325);
 	color: $color-white;
 	text-align: center;
 	display: flex;
@@ -338,11 +340,11 @@ a{
 		text-shadow: none;
 	}
 
-	& .footerListing.left{
+	& .footer-listing.left{
 		margin-left: 25px;
 	}
 
-	& .footerListing.right{
+	& .footer-listing.right{
 		margin-right: 25px;
 	}
 
@@ -354,7 +356,7 @@ a{
 	}
 }
 
-.footerListing{
+.footer-listing{
 	flex: 2 1 0;
 }
 
@@ -377,7 +379,7 @@ a{
 		font-size: 140%;
 	}
 
-	.contentContent, .contentHeader{
+	.content-content, .content-header{
 		min-width: 90vw;
 		width: 90vw;
 	}

@@ -21,7 +21,7 @@ a:visited, a:active {
 a:hover {
   color: #B08F2B; }
 
-#headercolorbar {
+.color-bar {
   display: flex;
   min-width: 100vw;
   width: 100vw;
@@ -41,27 +41,27 @@ a:hover {
   opacity: 0.9;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5); }
 
-.hbc {
+.color-bar-block {
   display: block;
   flex-grow: 1;
   min-height: 100%;
   height: 100%;
   max-height: 100%; }
 
-#hbc1 {
-  color: #403000; }
+.color-bar-block-1 {
+  background-color: #403000; }
 
-#hbc2 {
-  color: #684F00; }
+.color-bar-block-2 {
+  background-color: #684F00; }
 
-#hbc3 {
-  color: #8F7010; }
+.color-bar-block-3 {
+  background-color: #8F7010; }
 
-#hbc4 {
-  color: #B08F2B; }
+.color-bar-block-4 {
+  background-color: #B08F2B; }
 
-#hbc5 {
-  color: #D0B150; }
+.color-bar-block-5 {
+  background-color: #D0B150; }
 
 #header {
   display: flex;
@@ -89,53 +89,53 @@ a:hover {
   font-size: 1.5em;
   letter-spacing: 0.05em; }
 
-#headerLogo {
+#header-logo {
   flex-grow: 7;
   height: 75%;
   text-align: left;
   margin-left: 5%;
   margin-right: -5%; }
-  #headerLogo img {
+  #header-logo img {
     height: 100%;
     width: auto; }
 
-.headerItem {
+.header-item {
   flex-grow: 1;
   text-align: center;
   vertical-align: middle;
   margin-right: 5px;
   margin-left: 5px;
   text-shadow: -1px 1px 2px rgba(200, 200, 200, 0.75); }
-  .headerItem a, .headerItem a:visited, .headerItem a:active, .headerItem a:link {
+  .header-item a, .header-item a:visited, .header-item a:active, .header-item a:link {
     text-decoration: none;
     color: #222222;
     transition: color 1s ease; }
-  .headerItem a:hover {
+  .header-item a:hover {
     color: #666666; }
 
-.headerItemHighlight {
+.header-item-highlight {
   margin-right: 5%;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
-  box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.5), inset -1px 1px 2px transparent;
   text-shadow: -1px 1px 2px rgba(100, 100, 100, 0.75); }
-  .headerItemHighlight .headerItem:last-child, .headerItemHighlight, .headerItemHighlight a, .headerItemHighlight a:visited, .headerItemHighlight a:active, .headerItemHighlight a:link {
+  .header-item-highlight, .header-item-highlight.header-item:last-child, .header-item-highlight a, .header-item-highlight a:visited, .header-item-highlight a:active, .header-item-highlight a:link {
     background: #8F7010;
     color: #FAFAFA;
-    transition: color 1s ease, background 1s ease, box-shadow 0.25s linear; }
-  .headerItemHighlight:hover {
+    transition: color 1s ease, background 1s ease, box-shadow 0.5s linear; }
+  .header-item-highlight:hover {
     color: #FFFFFF;
     background: #B08F2B;
-    box-shadow: 1px -1px 2px rgba(0, 0, 0, 0.5); }
+    box-shadow: -1px 1px 2px transparent, inset -1px 1px 2px rgba(0, 0, 0, 0.5); }
 
-#contentContainer {
+#content-container {
   position: absolute;
   top: 0;
   left: 0;
   overflow-y: scroll;
   overflow-x: hidden; }
 
-.contentPage {
+.content-page {
   height: 100vh;
   min-height: 100vh;
   min-width: 100vw;
@@ -169,7 +169,7 @@ a:hover {
   background: linear-gradient(rgba(0, 0, 0, 0.625), rgba(0, 0, 0, 0.625)), url("../images/pexels-photo-220197.jpeg") no-repeat center top;
   background-size: cover; }
 
-.contentWrapper {
+.content-wrapper {
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -180,11 +180,11 @@ a:hover {
   border-radius: 10px;
   padding: 10px;
   box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.26), 0 3px 6px 1px rgba(0, 0, 0, 0.33); }
-  .contentPage:first-of-type .contentWrapper {
+  .content-page:first-of-type .content-wrapper {
     box-shadow: none;
     background: none; }
 
-.contentHeader {
+.content-header {
   min-width: 60vw;
   align-self: center;
   text-align: center;
@@ -203,7 +203,7 @@ a:hover {
   padding: 0px;
   border-radius: 0px; }
 
-.contentContent {
+.content-content {
   width: 60vw;
   margin-left: auto;
   margin-right: auto;
@@ -212,10 +212,10 @@ a:hover {
   font-size: 1.25em;
   text-align: justify; }
 
-.contentItem {
+.content-item {
   margin-bottom: 1em; }
 
-#Contact .contentItem, .contentItem:last-child {
+#Contact .content-item, .content-item:last-child {
   margin-bottom: 0em; }
 
 #footer {
@@ -225,7 +225,7 @@ a:hover {
   min-width: 100%;
   width: 100%;
   max-width: 100%;
-  background: rgba(10, 10, 10, 0.8);
+  background: rgba(10, 10, 10, 0.325);
   color: #FAFAFA;
   text-align: center;
   display: flex;
@@ -233,15 +233,15 @@ a:hover {
   box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.5); }
   #footer .fa {
     text-shadow: none; }
-  #footer .footerListing.left {
+  #footer .footer-listing.left {
     margin-left: 25px; }
-  #footer .footerListing.right {
+  #footer .footer-listing.right {
     margin-right: 25px; }
   #footer #source {
     flex-shrink: 1;
     flex-grow: 1; }
 
-.footerListing {
+.footer-listing {
   flex: 2 1 0; }
 
 .left {
@@ -257,7 +257,7 @@ a:hover {
   html {
     font-size: 140%; }
 
-  .contentContent, .contentHeader {
+  .content-content, .content-header {
     min-width: 90vw;
     width: 90vw; }
 
