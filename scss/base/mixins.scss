@@ -1,0 +1,4 @@
+@mixin content-page-background($background-image){
+	background: $background-dim, $background-image no-repeat center top;
+	background-size: cover;
+}

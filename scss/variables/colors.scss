@@ -1,0 +1,18 @@
+//Colors Gold
+$color-gold-darkest: #403000;
+$color-gold-dark: #684F00;
+$color-gold: #8F7010;
+$color-gold-light: #B08F2B;
+$color-gold-lightest: #D0B150;
+
+//Colors Misc
+$color-white: #FAFAFA;
+
+///Color Lists
+$color-list-gold: (
+	$color-gold-darkest,
+	$color-gold-dark,
+	$color-gold,
+	$color-gold-light,
+	$color-gold-lightest
+);
