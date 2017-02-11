@@ -9,9 +9,14 @@
 ////Base////
 @import "base/mixins";
 
+////Components////
+@import "components/forms";
+@import "components/inputs";
+@import "components/buttons";
+@import "components/recaptcha";
+@import "components/counter";
+
 html, body{
-	margin: 0;
-	
 	min-height: 100%;
 	height: 100%;
 	
@@ -19,7 +24,8 @@ html, body{
 	width: 100%;
 	max-width: 100%;
 
-	background: #888;
+	margin: 0;
+
 	color: $color-white;
 
 	overflow-x: hidden;
@@ -187,16 +193,16 @@ a{
 	text-shadow: -1px 1px 2px rgba(100,100,100,0.75);
 
 	&, &.header-item:last-child, & a, & a:visited, & a:active, & a:link{
-		background: $color-gold;
+		background-color: $color-gold-light;
 		color: $color-white;
 		transition:	color 1s ease,
-					background 1s ease,
+					background-color 1s ease,
 					box-shadow 0.5s linear;
 	}
 
 	&:hover{
-		color: #FFFFFF;
-		background: $color-gold-light;
+		color: #FFFFFF !important;
+		background-color: $color-gold !important;
 		box-shadow: -1px 1px 2px rgba(0,0,0,0),
 			  inset -1px 1px 2px rgba(0,0,0,0.5);
 	}
@@ -252,6 +258,10 @@ a{
 	@include content-page-background($background-image-contact);
 }
 
+#Mail{
+	@include content-page-background($background-image-mail);
+}
+
 .content-wrapper{
 	display: flex;
 	flex-direction: column;
@@ -284,6 +294,12 @@ a{
 
 	letter-spacing: 0.05em;
 	text-shadow: 0px 1px 10px rgba(0,0,0,0.75);
+}
+
+.content-subheader{
+	@extend .content-header;
+	font-size: 1.5em;
+	margin-bottom: 0.25em;
 }
 
 .fa{

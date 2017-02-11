@@ -1,0 +1,22 @@
+.button{
+    box-sizing: border-box;
+    border: none;
+    border-radius: 0px;
+    height: 2em;
+    background-color: $color-gold;
+    color: $color-white;
+    cursor: pointer;
+
+    transition:	color 1s ease,
+                background-color 1s ease,
+                box-shadow 0.5s linear;
+
+    &:hover{
+        background: $color-gold-dark;
+    }
+
+    &.button-submit{
+        width: 10%;
+        
+    }
+}

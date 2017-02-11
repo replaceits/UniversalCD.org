@@ -1,11 +1,54 @@
+.form.form-mail {
+  font-size: 0em;
+  text-align: center; }
+
+input {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem; }
+  input:-webkit-autofill {
+    box-shadow: inset 0 0 0px 1000px #FAFAFA; }
+
+.input-text {
+  height: 2em;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 0px;
+  background-color: #FAFAFA;
+  color: #222222; }
+  .input-text.input-mail {
+    width: 40%;
+    text-align: center;
+    margin-bottom: 1em; }
+
+.button {
+  box-sizing: border-box;
+  border: none;
+  border-radius: 0px;
+  height: 2em;
+  background-color: #8F7010;
+  color: #FAFAFA;
+  cursor: pointer;
+  transition: color 1s ease, background-color 1s ease, box-shadow 0.5s linear; }
+  .button:hover {
+    background: #684F00; }
+  .button.button-submit {
+    width: 10%; }
+
+.g-recaptcha {
+  margin: 0 auto;
+  width: 300px; }
+
+.counter {
+  display: inline-block;
+  color: #D0B150; }
+
 html, body {
-  margin: 0;
   min-height: 100%;
   height: 100%;
   min-width: 100%;
   width: 100%;
   max-width: 100%;
-  background: #888;
+  margin: 0;
   color: #FAFAFA;
   overflow-x: hidden;
   font-size: 100%;
@@ -120,12 +163,12 @@ a:hover {
   box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.5), inset -1px 1px 2px transparent;
   text-shadow: -1px 1px 2px rgba(100, 100, 100, 0.75); }
   .header-item-highlight, .header-item-highlight.header-item:last-child, .header-item-highlight a, .header-item-highlight a:visited, .header-item-highlight a:active, .header-item-highlight a:link {
-    background: #8F7010;
+    background-color: #B08F2B;
     color: #FAFAFA;
-    transition: color 1s ease, background 1s ease, box-shadow 0.5s linear; }
+    transition: color 1s ease, background-color 1s ease, box-shadow 0.5s linear; }
   .header-item-highlight:hover {
-    color: #FFFFFF;
-    background: #B08F2B;
+    color: #FFFFFF !important;
+    background-color: #8F7010 !important;
     box-shadow: -1px 1px 2px transparent, inset -1px 1px 2px rgba(0, 0, 0, 0.5); }
 
 #content-container {
@@ -169,6 +212,10 @@ a:hover {
   background: linear-gradient(rgba(0, 0, 0, 0.625), rgba(0, 0, 0, 0.625)), url("../images/pexels-photo-220197.jpeg") no-repeat center top;
   background-size: cover; }
 
+#Mail {
+  background: linear-gradient(rgba(0, 0, 0, 0.625), rgba(0, 0, 0, 0.625)), url("../images/man-hands-holidays-looking.jpg") no-repeat center top;
+  background-size: cover; }
+
 .content-wrapper {
   display: flex;
   flex-direction: column;
@@ -184,7 +231,7 @@ a:hover {
     box-shadow: none;
     background: none; }
 
-.content-header {
+.content-header, .content-subheader {
   min-width: 60vw;
   align-self: center;
   text-align: center;
@@ -194,6 +241,10 @@ a:hover {
   font-size: 4em;
   letter-spacing: 0.05em;
   text-shadow: 0px 1px 10px rgba(0, 0, 0, 0.75); }
+
+.content-subheader {
+  font-size: 1.5em;
+  margin-bottom: 0.25em; }
 
 .fa {
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75); }
@@ -257,7 +308,7 @@ a:hover {
   html {
     font-size: 140%; }
 
-  .content-content, .content-header {
+  .content-content, .content-header, .content-subheader {
     min-width: 90vw;
     width: 90vw; }
 

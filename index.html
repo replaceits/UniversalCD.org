@@ -11,11 +11,13 @@
 
 		<title>Universal Community Developers</title>
 
-		<link rel="stylesheet" href="css/UniversalCD.org.css?v=0.1">
+		<link rel="stylesheet" href="css/UniversalCD.org.css?v=0.2">
 		<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet">
 		<link rel="stylesheet" href="https://use.fontawesome.com/3510507754.css">
 
 		<link rel="shortcut icon" href="favicon.ico">
+
+		<script src='https://www.google.com/recaptcha/api.js'></script>
 	</head>
 
 	<body>
@@ -112,6 +114,61 @@
 						</div>
 						<div class="content-item center">
 							<i class="fa fa-facebook-square" aria-hidden="true" title="Facebook"></i>&nbsp;<a href="https://www.facebook.com/universalcommunitydevelopers">@universalcommunitydevelopers</a>
+						</div>
+						<div class="content-item center">
+							<br>
+							<div class="content-subheader">
+								Join our mailing list
+							</div>
+							<noscript>
+								Please enable javascript to join the mailing list.
+							</noscript>
+							<form class="form form-mail" id="form-mail" action="mailinglist.php" method="POST" style="display: none;">
+								<input class="input-text input-mail" id="input-mail" name="email" type="text" placeholder="Email Address">
+								<input class="button button-submit" id="button-submit" type="submit" value="Submit" disabled>
+								<div class="g-recaptcha" id="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6LcFJhUUAAAAAFgr8GRnQLjSX_XDSY5qrRWlkOpC" style="display: none;"></div>
+							</form>
+							<script type="text/javascript">
+								document.getElementById('form-mail').style.display = 'block';
+								var input_mail = document.getElementById('input-mail');
+								var button_submit = document.getElementById('button-submit');
+								var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+								var captcha_filled = false;
+
+								function recaptchaCallback(){
+									captcha_filled = true;
+									if(input_mail.value.length > 0 && input_mail.value.match(mailformat)){
+										button_submit.disabled = false;
+									}
+								};
+
+								input_mail.onchange = function(){
+									var recaptcha = document.getElementById('g-recaptcha');
+									if(this.value.length === 0){
+										recaptcha.style.display = 'none';
+										this.style.backgroundColor = '#FAFAFA';
+										this.style.boxShadow = 'none';
+										button_submit.disabled = true;
+									} else {
+										recaptcha.style.display = 'block';
+										if(this.value.match(mailformat))
+										{
+											this.style.backgroundColor = '#FAFAFA';
+											this.style.boxShadow = 'none';
+											if(captcha_filled){
+												button_submit.disabled = false;
+											}
+										} else {
+											this.style.backgroundColor = '#FAFAFA';
+											this.style.boxShadow = 'inset 0px 0px 5px 1px #8f7010';
+											button_submit.disabled = true;
+										} 
+									}
+								}; 
+								input_mail.onkeypress = input_mail.onchange;
+								input_mail.onpaste = input_mail.onchange;
+								input_mail.oninput = input_mail.onchange;
+							</script>
 						</div>
 					</div>
 				</div>
