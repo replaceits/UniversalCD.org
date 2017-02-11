@@ -8,18 +8,13 @@
 		<meta name="author" content="Sidney Williams">
 		<meta name="rating" content="General">
 		<meta name="url" content="https://www.UniversalCD.org">
-
 		<title>Universal Community Developers</title>
-
 		<link rel="stylesheet" href="css/UniversalCD.org.css?v=0.2">
 		<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet">
 		<link rel="stylesheet" href="https://use.fontawesome.com/3510507754.css">
-
 		<link rel="shortcut icon" href="favicon.ico">
-
 		<script src='https://www.google.com/recaptcha/api.js'></script>
 	</head>
-
 	<body>
 		<div class="color-bar">
 			<div class="color-bar-block color-bar-block-1"></div>
@@ -126,7 +121,7 @@
 							<form class="form form-mail" id="form-mail" action="mailinglist.php" method="POST" style="display: none;">
 								<input class="input-text input-mail" id="input-mail" name="email" type="text" placeholder="Email Address">
 								<input class="button button-submit" id="button-submit" type="submit" value="Submit" disabled>
-								<div class="g-recaptcha" id="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6LcFJhUUAAAAAFgr8GRnQLjSX_XDSY5qrRWlkOpC" style="display: none;"></div>
+								<div class="g-recaptcha" id="g-recaptcha" data-callback="recaptchaCallback" data-expired-callback="recaptchaExpiredCallback" data-sitekey="6LcFJhUUAAAAAFgr8GRnQLjSX_XDSY5qrRWlkOpC" style="display: none;"></div>
 							</form>
 							<script type="text/javascript">
 								document.getElementById('form-mail').style.display = 'block';
@@ -141,6 +136,12 @@
 										button_submit.disabled = false;
 									}
 								};
+
+								function recaptchaExpiredCallback(){
+									captcha_filled = false;
+									button_submit.disabled = true;
+									grecaptcha.reset('g-recaptcha');
+								}
 
 								input_mail.onchange = function(){
 									var recaptcha = document.getElementById('g-recaptcha');
