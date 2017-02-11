@@ -132,7 +132,7 @@
 
 								function recaptchaCallback(){
 									captcha_filled = true;
-									if(input_mail.value.length > 0 && input_mail.value.match(mailformat)){
+									if(input_mail.value.length > 0 && input_mail.value.length <= 255 && input_mail.value.match(mailformat)){
 										button_submit.disabled = false;
 									}
 								};
@@ -152,7 +152,7 @@
 										button_submit.disabled = true;
 									} else {
 										recaptcha.style.display = 'block';
-										if(this.value.match(mailformat))
+										if(this.value.match(mailformat) && this.value.length <= 255)
 										{
 											this.style.backgroundColor = '#FAFAFA';
 											this.style.boxShadow = 'none';

@@ -15,7 +15,7 @@
     $api_key = file_get_contents('/api-keys/recaptcha.key');
     $database_key = file_get_contents('/api-keys/database.key');
 
-    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if (strlen($email) <= 255 && filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $valid_email = true;
         try {
             $url = 'https://www.google.com/recaptcha/api/siteverify';
