@@ -42,28 +42,28 @@
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<meta name="description" content="">
-		<meta name="subject" content="">
-		<meta name="author" content="Sidney Williams">
-		<meta name="rating" content="General">
-		<meta name="url" content="https://www.UniversalCD.org/mailinglist.php">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="">
+        <meta name="subject" content="">
+        <meta name="author" content="Sidney Williams">
+        <meta name="rating" content="General">
+        <meta name="url" content="https://www.UniversalCD.org/mailinglist.php">
 
-		<title>Universal Community Developers</title>
+        <title>Universal Community Developers</title>
 
-		<link rel="stylesheet" href="css/UniversalCD.org.css?v=0.2">
-		<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet">
+        <link rel="stylesheet" href="css/UniversalCD.org.css?v=0.2">
+        <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet">
 
-		<link rel="shortcut icon" href="favicon.ico">
-	</head>
+        <link rel="shortcut icon" href="favicon.ico">
+    </head>
 
-	<body>
+    <body>
         <div id="content-container">
-			<div class="content-page" id="Mail">
-				<div class="content-wrapper">
-					<div class="content-header">
+            <div class="content-page" id="Mail">
+                <div class="content-wrapper">
+                    <div class="content-header">
 						<?php
                             if($valid_email && $valid_captcha){
                                 echo("Thank you for joining!");
@@ -73,7 +73,7 @@
                                 echo("We're sorry, your captcha is invalid.");
                             }
                         ?>
-					</div>
+                    </div>
                     <div class="content-content">
                         <br>
                         <div class="content-item center">
@@ -106,8 +106,8 @@
                             </script>
                         </div>
                     </div>
-				</div>
-			</div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
