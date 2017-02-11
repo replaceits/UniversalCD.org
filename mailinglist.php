@@ -64,7 +64,7 @@
             <div class="content-page" id="Mail">
                 <div class="content-wrapper">
                     <div class="content-header">
-						<?php
+                        <?php
                             if($valid_email && $valid_captcha){
                                 echo("Thank you for joining!");
                             } elseif(!$valid_email) {
