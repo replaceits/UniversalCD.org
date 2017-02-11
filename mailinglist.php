@@ -6,11 +6,14 @@
     }
     $email = stripslashes(
                 htmlspecialchars(
-                    $_POST['email']
-            ));
+                    trim(
+                        $_POST['email']
+             )));
     $valid_captcha = false;
     $valid_email = false;
+    $valid_database = false;
     $api_key = file_get_contents('/api-keys/recaptcha.key');
+    $database_key = file_get_contents('/api-keys/database.key');
 
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $valid_email = true;
@@ -37,6 +40,19 @@
         }
     } else {
         $valid_email = false;
+    }
+    if($valid_email && $valid_captcha){
+        $mysql_con = mysqli_connect("localhost","http",$database_key,"universalcd");
+        if($mysql_con){
+            $valid_database = true;
+            $email_sql = mysqli_real_escape_string($mysql_con, $email);
+            $sql = "INSERT IGNORE INTO mailing_list (email_address, join_date) VALUES ('" . $email_sql . "', '" . date("Y-m-d") . "');";
+
+            if (!mysqli_query($mysql_con, $sql)) {
+                $valid_database = false;
+            }
+        }
+        mysqli_close($mysql_con);
     }
 ?>
 
@@ -65,7 +81,9 @@
                 <div class="content-wrapper">
                     <div class="content-header">
                         <?php
-                            if($valid_email && $valid_captcha){
+                            if(!$valid_database){
+                                echo("Woops, something went wrong on our end!");
+                            } elseif($valid_email && $valid_captcha){
                                 echo("Thank you for joining!");
                             } elseif(!$valid_email) {
                                 echo("We're sorry, your email is invalid.");
@@ -78,7 +96,9 @@
                         <br>
                         <div class="content-item center">
                             <?php
-                                if($valid_email && $valid_captcha){
+                                if(!$valid_database){
+                                    echo("Please try again in a minute or two while we solve the issue.");
+                                } elseif($valid_email && $valid_captcha){
                                     echo($email . " has been added to our mailing list.");
                                 } else {
                                     echo("Please try again.");
