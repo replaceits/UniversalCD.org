@@ -1,4 +1,11 @@
 <?php
+    session_start();
+
+    if(isset($_SESSION['username']) || !empty($_SESSION['username'])){
+        header('Location: ' . dirname($_SERVER['REQUEST_URI']) . "/admin.php");
+        exit(0);
+    }
+
     $logging_in = false;
     $valid_login = false;
 
@@ -28,6 +35,7 @@
                     $stmt->fetch();
                     if(password_verify($password,$password_hash)){
                         $valid_login = true;
+                        $_SESSION['username'] = $username;
                     }
                 }
                 $stmt->close();
@@ -51,7 +59,7 @@
         <meta name="rating" content="General">
         <meta name="url" content="https://www.UniversalCD.org/login.php">
 
-        <title>Universal Community Developers</title>
+        <title>Universal Community Developers - Login</title>
 
         <link rel="stylesheet" href="css/UniversalCD.org.css?v=0.2">
         <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet">
@@ -60,8 +68,8 @@
     </head>
     <body>
         <div id="content-container">
-            <div class="content-page" id="Mail">
-                <div class="content-wrapper">
+            <div class="content-page" id="Login">
+                <div class="content-wrapper no-background">
                     <div class="content-header">
                         <?php
                             if($logging_in){
@@ -71,7 +79,7 @@
                                     echo("Invalid username and/or password!");
                                 }
                             } else {
-                                echo("Please log in");
+                                echo("Log in");
                             }
                         ?>
                     </div>

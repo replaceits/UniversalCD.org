@@ -30,6 +30,7 @@ input{
     &.input-username{
         min-width: 10rem;
         width: 20%;
+        max-width: 12rem;
     }
 
     &.input-password{

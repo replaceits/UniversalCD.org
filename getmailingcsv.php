@@ -1,4 +1,9 @@
 <?php
+    if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
+        header('Location: ' . dirname($_SERVER['REQUEST_URI']) . "/login.php");
+        exit(0);
+    }
+
     header('Content-Type: text/csv; charset=utf-8');
     header('Content-Disposition: attachment; filename=data.csv');
 

@@ -67,7 +67,7 @@
         <meta name="rating" content="General">
         <meta name="url" content="https://www.UniversalCD.org/mailinglist.php">
 
-        <title>Universal Community Developers</title>
+        <title>Universal Community Developers - Mailing List</title>
 
         <link rel="stylesheet" href="css/UniversalCD.org.css?v=0.2">
         <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet">
