@@ -14,10 +14,26 @@ input{
     border-radius: 0px;
     background-color: $color-white;
     color: #222222;
+    text-align: center;
+
+    &.input-invalid{
+        background-color: #FAFAFA;
+        box-shadow: inset 0px 0px 5px 1px $color-gold;
+    }
 
     &.input-mail{
+        min-width: 20rem;
         width: 40%;
-        text-align: center;
         margin-bottom: 1em;
+    }
+
+    &.input-username{
+        min-width: 10rem;
+        width: 20%;
+    }
+
+    &.input-password{
+        @extend .input-username !optional;
+        border-left: 1px solid $color-gold;
     }
 }

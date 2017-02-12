@@ -262,6 +262,10 @@ a{
 	@include content-page-background($background-image-mail);
 }
 
+#Login{
+	@include content-page-background($background-image-login);
+}
+
 .content-wrapper{
 	display: flex;
 	flex-direction: column;
@@ -274,14 +278,20 @@ a{
 	padding: 10px;
 	box-shadow: 0 3px 6px 1px rgba(0,0,0,0.26), 0 3px 6px 1px rgba(0,0,0,0.33);
 	
-	.content-page:first-of-type &{
+	&.no-background{
 		box-shadow: none;
 		background: none;
 	}
 }
 
 .content-header{
-	min-width: 60vw;
+	min-width: 40rem;
+	width: 60vw;
+
+	.content-wrapper.no-background > & {
+		width: 100vw;
+	}
+
 	align-self: center;
 	text-align: center;
 	vertical-align: middle;
@@ -313,7 +323,12 @@ a{
 }
 
 .content-content{
+	min-width: 40rem;
 	width: 60vw;
+
+	.content-wrapper.no-background > & {
+		width: 100vw;
+	}
 	
 	margin: {
 		left: auto;

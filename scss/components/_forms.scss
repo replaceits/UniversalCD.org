@@ -3,4 +3,8 @@
         font-size: 0em;
         text-align: center;
     }
+
+    &.form-login{
+        @extend .form-mail;
+    }
 }
