@@ -21,3 +21,11 @@
         max-width: 7rem;
     }
 }
+
+a.button{
+    @extend .button-submit;
+    @extend .button;
+    display: inline-block;
+    color: $color-white;
+    line-height: 2em;
+}

@@ -1,0 +1,14 @@
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px){
+	html{
+		font-size: 140%;
+	}
+
+	.content-content, .content-header{
+		min-width: 90vw;
+		width: 90vw;
+	}
+
+	#source{
+		display: none;
+	}
+}

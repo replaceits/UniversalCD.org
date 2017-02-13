@@ -1,0 +1,18 @@
+a{
+	&, &:hover, &:visited, &:active, &:link{
+		text-decoration: none;
+		transition: color 1s ease;
+	}
+
+	&:link{
+		color: $color-gold;
+	}
+
+	&:visited, &:active{
+		color: $color-gold-dark;
+	}
+
+	&:hover{
+		color: $color-gold-light;
+	}
+}
