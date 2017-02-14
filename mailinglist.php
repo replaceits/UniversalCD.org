@@ -53,9 +53,6 @@
                 $stmt->bind_param('s',$email);
                 $stmt->execute();
                 $stmt->store_result();
-                if($stmt->affected_rows > 0){
-                    $valid_database = true;
-                }
                 $stmt->close();
             } else {
                 $valid_database = false;
