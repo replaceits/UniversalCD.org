@@ -19,11 +19,11 @@
 
         if(isset($_POST['email']) && !empty('email')){
             $email_removed = false;
-            $email = stripslashes(
+            $email = mysqli_real_escape_string(stripslashes(
                     htmlspecialchars(
                         trim(
                             $_POST['email']
-                )));
+                ))));
             $sql = "DELETE FROM mailing_list WHERE email_address = ?";
             if($stmt = $mysqli_con->prepare($sql)){
                 $stmt->bind_param('s',$email);

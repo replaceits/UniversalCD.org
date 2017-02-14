@@ -42,17 +42,27 @@
         $valid_email = false;
     }
     if($valid_email && $valid_captcha){
-        $mysql_con = mysqli_connect("localhost","http",$database_key,"universalcd");
-        if($mysql_con){
-            $valid_database = true;
-            $email_sql = mysqli_real_escape_string($mysql_con, $email);
-            $sql = "INSERT IGNORE INTO mailing_list (email_address, join_date) VALUES ('" . $email_sql . "', '" . date("Y-m-d") . "');";
+        $mysqli_con = new mysqli("localhost","http",$database_key,"universalcd");
 
-            if (!mysqli_query($mysql_con, $sql)) {
+        if(!mysqli_connect_errno()){
+            $valid_database = true;
+
+            $sql = "INSERT IGNORE INTO mailing_list (email_address, join_date) VALUES ( ? , '" . date("Y-m-d") . "');";
+
+            if($stmt = $mysqli_con->prepare($sql)){
+                $stmt->bind_param('s',$email);
+                $stmt->execute();
+                $stmt->store_result();
+                if($stmt->affected_rows > 0){
+                    $valid_database = true;
+                }
+                $stmt->close();
+            } else {
                 $valid_database = false;
             }
         }
-        mysqli_close($mysql_con);
+
+        $mysqli_con->close();
     }
 ?>
 
