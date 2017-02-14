@@ -17,6 +17,27 @@
     if(!mysqli_connect_errno()){
         $valid_database = true;
 
+        if(isset($_POST['email']) && !empty('email')){
+            $email_removed = false;
+            $email = stripslashes(
+                    htmlspecialchars(
+                        trim(
+                            $_POST['email']
+                )));
+            $sql = "DELETE FROM mailing_list WHERE email_address = ?";
+            if($stmt = $mysqli_con->prepare($sql)){
+                $stmt->bind_param('s',$email);
+                $stmt->execute();
+                $stmt->store_result();
+                if($stmt->affected_rows > 0){
+                    $email_removed = true;
+                }
+                $stmt->close();
+            } else {
+                $valid_database = false;
+            }
+        }
+
         $sql = "SELECT COUNT(email_address) FROM mailing_list;";
 
         if($stmt = $mysqli_con->prepare($sql)){
@@ -49,10 +70,10 @@
         } else {
             $valid_database = false;
         }
-
     } else {
         $valid_database = false;
     }
+
     $mysqli_con->close();
 
 ?>
@@ -131,6 +152,47 @@
                                     <?php echo($mailing_list_users); ?> users have joined the mailing list.
                                     <br>
                                     The last time someone joined was on <?php echo($mailing_list_last_date); ?>
+                                </div>
+                                <div class="content-item center">
+                                    <div class="content-subheader">
+                                        Remove an email address.
+                                    </div>
+                                    <?php 
+                                        if(isset($email) && !empty($email) && $valid_database){
+                                            echo("Email \"" . $email . "\" was " . ($email_removed?"removed.":" not in the database."));
+                                        }
+                                    ?>
+                                    <form class="form form-mail" id="form-mail" action="admin.php#Mail" method="POST">
+                                        <input class="input-text input-mail" id="input-mail" name="email" type="text" placeholder="Email Address">
+                                        <input class="button button-submit" id="button-submit" type="submit" value="Remove" disabled>
+                                    </form>
+                                    <script type="text/javascript">
+                                        var input_mail = document.getElementById('input-mail');
+                                        var button_submit = document.getElementById('button-submit');
+                                        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+                                        input_mail.onchange = function(){
+                                            if(this.value.length === 0){
+                                                this.style.backgroundColor = '#FAFAFA';
+                                                this.style.boxShadow = 'none';
+                                                button_submit.disabled = true;
+                                            } else {
+                                                if(this.value.match(mailformat) && this.value.length <= 255)
+                                                {
+                                                    this.style.backgroundColor = '#FAFAFA';
+                                                    this.style.boxShadow = 'none';
+                                                    button_submit.disabled = false;
+                                                } else {
+                                                    this.style.backgroundColor = '#FAFAFA';
+                                                    this.style.boxShadow = 'inset 0px 0px 5px 1px #8f7010';
+                                                    button_submit.disabled = true;
+                                                } 
+                                            }
+                                        }; 
+                                        input_mail.onkeypress = input_mail.onchange;
+                                        input_mail.onpaste = input_mail.onchange;
+                                        input_mail.oninput = input_mail.onchange;
+                                    </script>
                             <?php
                                 } else {
                             ?>

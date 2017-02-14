@@ -108,8 +108,8 @@
                         <div class="content-item center">
                             You will be automatically redirected in <div id="redirect-counter" class="counter">10</div> seconds.
                             <br>
-                            Please <a href="<?php echo(dirname($_SERVER['REQUEST_URI']));?>">click here</a> if you are not automatically redirected.
-                            <script type="text/javascript">function timer(){if(count-=1,document.getElementById("redirect-counter").innerHTML=count,count<=0)return clearInterval(counter),void(window.location=document.URL.substr(0,document.URL.lastIndexOf("/")))}var count=10,counter=setInterval(timer,1e3);</script>
+                            Please <a href="<?php echo(dirname($_SERVER['REQUEST_URI']) . "#Contact");?>">click here</a> if you are not automatically redirected.
+                            <script type="text/javascript">function timer(){if(count-=1,document.getElementById("redirect-counter").innerHTML=count,count<=0)return clearInterval(counter),void(window.location=document.URL.substr(0,document.URL.lastIndexOf("/"))+"#Contact")}var count=10,counter=setInterval(timer,1e3);</script>
                         </div>
                     </div>
                 </div>
