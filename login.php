@@ -137,7 +137,7 @@
                                     You will be automatically redirected in <div id="redirect-counter" class="counter">10</div> seconds.
                                     <br>
                                     Please <a href="<?php echo(dirname($_SERVER['REQUEST_URI']) . ($valid_login ? "admin.php" : "login.php") );?>">click here</a> if you are not automatically redirected.
-                                    <script type="text/javascript">function timer(){if(count-=1,document.getElementById("redirect-counter").innerHTML=count,count<=0)return clearInterval(counter),void(window.location=document.URL.substr(0,document.URL.lastIndexOf("/")) + "<?php echo(($valid_login ? "admin.php" : "login.php")); ?>" )}var count=10,counter=setInterval(timer,1e3);</script>
+                                    <script type="text/javascript">function timer(){if(count-=1,document.getElementById("redirect-counter").innerHTML=count,count<=0)return clearInterval(counter),void(window.location=document.URL.substr(0,document.URL.lastIndexOf("/")) + "<?php echo(($valid_login ? "/admin.php" : "/login.php")); ?>" )}var count=10,counter=setInterval(timer,1e3);</script>
                             <?php
                                 }
                             ?>
