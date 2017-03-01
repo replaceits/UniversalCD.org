@@ -82,11 +82,29 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="description" content="">
-        <meta name="subject" content="">
-        <meta name="author" content="Sidney Williams">
-        <meta name="rating" content="General">
-        <meta name="url" content="https://www.UniversalCD.org/login.php">
+        <meta name="description" content="Universal Community Developers is a community based non-profit organization. We are an alliance of concerned citizens geared towards giving back, paying it forward and creating change in one youth, one family and one community at a time, while fostering a universal development process and creating safe environments for all.">
+		<meta name="subject" content="Non-profit">
+		<meta name="author" content="Universal Community Developers">
+		<meta name="rating" content="General">
+        <meta name="url" content="https://www.universalcd.org/login.php">
+
+        <meta property="og:title" content="Universal Community Developers">
+		<meta property="og:description" content="Universal Community Developers is a community based non-profit organization. We are an alliance of concerned citizens geared towards giving back, paying it forward and creating change in one youth, one family and one community at a time, while fostering a universal development process and creating safe environments for all.">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://www.universalcd.org/">
+		<meta property="og:image" content="https://www.universalcd.org/images/preview.png">
+		<meta property="og:image:type" content="image/png">
+		<meta property="og:image:height" content="409">
+		<meta property="og:image:width" content="793">
+
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@replaceits">
+		<meta name="twitter:creator" content="@replaceits">
+		<meta name="twitter:title" content="Universal Community Developers">
+		<meta name="twitter:description" content="Universal Community Developers is a community based non-profit organization. We are an alliance of concerned citizens geared towards giving back, paying it forward and creating change in one youth, one family and one community at a time, while fostering a universal development process and creating safe environments for all.">
+		<meta name="twitter:image" content="https://www.universalcd.org/images/preview.png">
+		<meta name="twitter:image:alt" content="Universal Community Developers">
 
         <title>Universal Community Developers - Admin</title>
 
