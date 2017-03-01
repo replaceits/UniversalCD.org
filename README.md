@@ -1,5 +1,7 @@
 # UniversalCD.org
 
+Universal Community Developers is a community based non-profit organization. We are an alliance of concerned citizens geared towards giving back, paying it forward and creating change in one youth, one family and one community at a time, while fostering a universal development process and creating safe environments for all.
+
 ##Database
 ```
 +-----------------------+
