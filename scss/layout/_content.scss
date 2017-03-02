@@ -1,0 +1,147 @@
+#content-container{
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	overflow: {
+		y: scroll;
+		x: hidden;
+	}
+}
+
+.content-page{
+	height:100vh;
+	min-height:100vh;
+	min-width: 100vw;
+	width: 100vw;
+	background-size: cover;
+	z-index: 1;
+	color: $color-white;
+	box-shadow: inset 0px 0px 50px 0px rgba(0,0,0,1);
+	display: flex;
+	justify-content: center;
+
+	align: {
+		content: center;
+		items: center;
+	}
+}
+
+#Home{
+	@include content-page-background($background-image-home);
+}
+
+#About{
+	@include content-page-background($background-image-about);
+}
+
+#Community{
+	@include content-page-background($background-image-community);
+}
+
+#Donate{
+	@include content-page-background($background-image-donate);
+}
+
+#Contact{
+	@include content-page-background($background-image-contact);
+}
+
+#Mail{
+	@include content-page-background($background-image-mail);
+}
+
+#Login{
+	@include content-page-background($background-image-login);
+}
+
+.content-wrapper{
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	z-index: 1;
+	text-align: center;
+	background: rgba(0,0,0,0.325);
+	border-radius: 10px;
+	padding: 10px;
+	box-shadow: 0 3px 6px 1px rgba(0,0,0,0.26), 0 3px 6px 1px rgba(0,0,0,0.33);
+	
+	&.no-background{
+		box-shadow: none;
+		background: none;
+	}
+}
+
+.content-header{
+	min-width: 40rem;
+	width: 60vw;
+
+	.content-wrapper.no-background > & {
+		width: 100vw;
+		
+		& .content-content{
+			width: 60vw;
+		}
+	}
+
+	align-self: center;
+	text-align: center;
+	vertical-align: middle;
+	
+	font: {
+		family: $font-title;
+		weight: 700;
+		size: 4em;
+	}
+
+	letter-spacing: 0.05em;
+	text-shadow: 0px 1px 10px rgba(0,0,0,0.75);
+}
+
+.content-subheader{
+	@extend .content-header;
+	font-size: 1.5em;
+	margin-bottom: 0.25em;
+}
+
+#welcome{
+	background: none;
+	padding: 0px;
+	border-radius: 0px;
+}
+
+.content-content{
+	min-width: 40rem;
+	width: 60vw;
+
+	.content-wrapper.no-background > & {
+		width: 60vw;
+		margin-top: 10px;
+		background: rgba(0,0,0,0.325);
+		border-radius: 10px;
+		padding: 10px;
+		box-shadow: 0 3px 6px 1px rgba(0,0,0,0.26), 0 3px 6px 1px rgba(0,0,0,0.33);
+	}
+	
+	margin: {
+		left: auto;
+		right: auto;
+	}
+
+	font: {
+		family: $font-body;
+		weight: 400;
+		size: 1.25em;
+	}
+
+	text-align: justify;
+}
+
+.content-item{
+	margin-bottom: 1em;
+}
+
+#Contact .content-item, .content-item:last-child{
+	margin-bottom: 0em;
+}
