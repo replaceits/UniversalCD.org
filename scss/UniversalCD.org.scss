@@ -213,6 +213,10 @@
 
 	.content-wrapper.no-background > & {
 		width: 100vw;
+		
+		& .content-content{
+			width: 60vw;
+		}
 	}
 
 	align-self: center;
@@ -246,7 +250,7 @@
 	width: 60vw;
 
 	.content-wrapper.no-background > & {
-		width: 100vw;
+		width: 60vw;
 	}
 	
 	margin: {
